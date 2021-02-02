@@ -31,7 +31,7 @@ def get_full_url(short_url):
     if u:
         # I use a temporary redirect here because I don't want to pollute my browser cache. Whether this should be
         # temporary or permanent depends on exactly why we'd be deploying a URL shortener and how durable we want
-        # the shortened links to actually be.
+        # the shortened links to actually be. It could possibly be an option when creating the URL in the first place.
         return redirect(u.full_url, 307)
     else:
         return make_response(
